@@ -1,0 +1,78 @@
+﻿
+%
+%
+%
+%
+\definecolor{spoilercolBG}{RGB}{255,255,255}%
+\definecolor{spoilercolTXT}{RGB}{230,230,230}%
+\newcommand{\AnimeTitleFormat}[1]{\textbf{#1}}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+\newcounter{colnum}
+\newcommand\maketabularrow[1]{%
+  \setcounter{colnum}{0}%
+  \whileboolexpr
+    { test {\ifnumcomp{\value{colnum}}{<}{#1}} }%
+    {&\stepcounter{colnum}\thecolnum}
+  }
+%
+%
+%
+%
+%
+\newcounter{loopi}%
+%
+\newcounter{KategorieEinsCnt}%
+\newcommand\setAnimeKatEins[3]{%
+  \csdef{AnimeKatEins#1}{%
+  	  \AnimeTitleFormat{#2}\nl%
+  	  #3%
+  }%
+}%
+\newcommand\addAnimeKatEins[2]{%
+  \stepcounter{KategorieEinsCnt}%
+  \csdef{AnimeKatEinsTitle\theKategorieEinsCnt}{#1}%
+  \csdef{AnimeKatEinsDesc\theKategorieEinsCnt}{#2}%
+}%
+\newcommand\getAnimeKatEinsT[1]{%
+  \csuse{AnimeKatEinsTitle#1}}%
+\newcommand\getAnimeKatEinsD[1]{%
+  \csuse{AnimeKatEinsDesc#1}}%
+\newcommand\checkAnimeKatEinsD[1]{%
+  \ifcsempty{AnimeKatEinsDesc#1}
+}
+%
+\newcounter{KategorieZweiCnt}%
+\newcommand\setAnimeKatZwei[3]{%
+  \csdef{AnimeKatZwei#1}{%
+  	  \AnimeTitleFormat{#2}\nl%
+  	  #3%
+  }%
+}%
+\newcommand\addAnimeKatZwei[2]{%
+  \stepcounter{KategorieZweiCnt}%
+  \csdef{AnimeKatZweiTitle\theKategorieZweiCnt}{#1}%
+  \csdef{AnimeKatZweiDesc\theKategorieZweiCnt}{#2}%
+}%
+\newcommand\getAnimeKatZweiT[1]{%
+  \csuse{AnimeKatZweiTitle#1}}%
+\newcommand\getAnimeKatZweiD[1]{%
+  \csuse{AnimeKatZweiDesc#1}}%
+\newcommand\checkAnimeKatZweiD[1]{%
+  \ifcsempty{AnimeKatZweiDesc#1}
+}
+%
+% 
+% 
+% 
+% 
+% 
+% 
+%

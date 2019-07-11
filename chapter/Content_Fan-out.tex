@@ -1,0 +1,74 @@
+﻿%
+%
+%
+%
+%
+%
+%
+%
+%
+\chapter{Ranking only}
+\label{chap:ranking_only}
+%
+%
+%
+\np
+\begin{enumerate}[leftmargin=2em,topsep=0ex,itemsep=0ex,parsep=0ex]%
+  \setcounter{loopi}{0}%
+  \loop\ifnum\value{loopi}<\value{KategorieEinsCnt}%
+  \stepcounter{loopi}%
+  	 \item \AnimeTitleFormat{\getAnimeKatEinsT{\theloopi}}%
+  \repeat%
+\end{enumerate}%
+%
+%
+\begin{enumerate}[leftmargin=2em,topsep=0ex,itemsep=0ex,parsep=0ex]%
+  \setcounter{loopi}{0}%
+  \loop\ifnum\value{loopi}<\value{KategorieZweiCnt}%
+  \stepcounter{loopi}%
+  	 \item \AnimeTitleFormat{\getAnimeKatZweiT{\theloopi}}%
+  \repeat%
+\end{enumerate}%
+%
+%
+%
+%
+%
+%
+\chapter{Ranking \& Rezensionen}
+%
+%
+\np
+\begin{enumerate}[leftmargin=2em,topsep=0ex,itemsep=0ex,parsep=0ex]%
+  \setcounter{loopi}{0}%
+  \loop\ifnum\value{loopi}<\value{KategorieEinsCnt}%
+  \stepcounter{loopi}%
+  	 \item \AnimeTitleFormat{\getAnimeKatEinsT{\theloopi}}%
+  	 		\checkAnimeKatEinsD{\theloopi}%
+			{}%
+			{\nl \getAnimeKatEinsD{\theloopi}}%
+  \repeat%
+\end{enumerate}%
+%
+%
+%
+%
+\begin{enumerate}[leftmargin=2em,topsep=0ex,itemsep=0ex,parsep=0ex]%
+  \setcounter{loopi}{0}%
+  \loop\ifnum\value{loopi}<\value{KategorieZweiCnt}%
+  \stepcounter{loopi}%
+  	 \item \AnimeTitleFormat{\getAnimeKatZweiT{\theloopi}}%
+  	 		\checkAnimeKatZweiD{\theloopi}%
+			{}%
+			{\nl \getAnimeKatZweiD{\theloopi}}%
+  \repeat%
+\end{enumerate}%
+%
+%
+%
+%
+%
+%
+%
+%
+%
